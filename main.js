@@ -72,3 +72,29 @@ const contenedor = document.getElementById("contenedor");
 const parrafo = document.createElement("p");
 parrafo.innerText = "Esto es un parrafo";
 parrafo.className = "titulo";
+contenedor.appendChild(parrafo);
+
+//Ejm
+
+class Producto{
+    constructor (nombre,precio){
+        this.nombre = nombre;
+        this.producto = precio;
+    }
+}
+
+const leche = new Producto ("Leche", 1890);
+const harina = new Producto ("Harina", 5700);
+const gata = new Producto ("Kitty", 100000000000000000);
+const arrayProductos = [leche, harina, gata];
+
+const contenedorProductos = document.getElementById("contenedorProductos");
+
+arrayProductos.forEach(producto => {
+    const div = document.createElement("div");
+    div.innerHTML = `<p> Nombre : ${producto.nombre}</p>
+                    <p> Precio : ${producto.precio}</p>
+                    <button> Agregar al carrito </button>`;
+                    contenedorProductos.appendChild(div);
+})
+
